@@ -408,32 +408,18 @@ getgenv().GUI_Loaded = true
 wait(0.1)
 TitleBarLabel.Name = "TitleBarLabel"
 TitleBarLabel.Parent = Background
-TitleBarLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TitleBarLabel.BackgroundTransparency = 0.2
+TitleBarLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TitleBarLabel.BackgroundTransparency = 0.250
 TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
-TitleBarLabel.Size = UDim2.new(1, 0, 0, 40)
-TitleBarLabel.Font = Enum.Font.GothamBold
-TitleBarLabel.Text = "   diparis & soneca7 dev's"
+TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
+TitleBarLabel.Font = Enum.Font.Unknown
+TitleBarLabel.Text = "			diparis & soneca7 dev's"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 TitleBarLabel.TextScaled = true
-TitleBarLabel.TextSize = 18
+TitleBarLabel.TextSize = 14.000
 TitleBarLabel.TextWrapped = true
 TitleBarLabel.TextXAlignment = Enum.TextXAlignment.Left
-
--- Adicionando efeito de sombra
-local shadow = Instance.new("TextLabel")
-shadow.Name = "Shadow"
-shadow.Parent = TitleBarLabel
-shadow.BackgroundTransparency = 1
-shadow.TextColor3 = Color3.fromRGB(0, 0, 0)
-shadow.Text = TitleBarLabel.Text
-shadow.Font = TitleBarLabel.Font
-shadow.TextSize = TitleBarLabel.TextSize
-shadow.TextScaled = TitleBarLabel.TextScaled
-shadow.TextXAlignment = TitleBarLabel.TextXAlignment
-shadow.Position = UDim2.new(0, 2, 0, 2)  -- Sombra deslocada
-shadow.TextTransparency = 0.5
 
 SectionList.Name = "SectionList"
 SectionList.Parent = Background
