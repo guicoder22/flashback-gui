@@ -646,18 +646,28 @@ WalkSpeed_Input.TextWrapped = true
 ClearCheckpoint_Button.Name = "ClearCheckpoint_Button"
 ClearCheckpoint_Button.Parent = Character_Section
 ClearCheckpoint_Button.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-ClearCheckpoint_Button.BackgroundTransparency = 0.500
-ClearCheckpoint_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ClearCheckpoint_Button.BorderSizePixel = 0
+ClearCheckpoint_Button.BackgroundTransparency = 0.300
+ClearCheckpoint_Button.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ClearCheckpoint_Button.BorderSizePixel = 2
 ClearCheckpoint_Button.Position = UDim2.new(0, 210, 0, 225)
-ClearCheckpoint_Button.Size = UDim2.new(0, 150, 0, 30)
-ClearCheckpoint_Button.Font = Enum.Font.Oswald
-ClearCheckpoint_Button.Text = "Limpar checkpoint"
-ClearCheckpoint_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClearCheckpoint_Button.Size = UDim2.new(0, 150, 0, 40)
+ClearCheckpoint_Button.Font = Enum.Font.GothamBold
+ClearCheckpoint_Button.Text = "Clear checkpoint"
+ClearCheckpoint_Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 ClearCheckpoint_Button.TextScaled = true
-ClearCheckpoint_Button.TextSize = 14.000
+ClearCheckpoint_Button.TextSize = 16
 ClearCheckpoint_Button.TextWrapped = true
+ClearCheckpoint_Button.BackgroundTransparency = 0.2
+ClearCheckpoint_Button.BorderRadius = UDim.new(0, 12) -- Borda arredondada
 
+-- Adicionando animação de hover
+ClearCheckpoint_Button.MouseEnter:Connect(function()
+    ClearCheckpoint_Button.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+end)
+
+ClearCheckpoint_Button.MouseLeave:Connect(function()
+    ClearCheckpoint_Button.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+end)
 JumpPower_Input.Name = "JumpPower_Input"
 JumpPower_Input.Parent = Character_Section
 JumpPower_Input.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
