@@ -646,27 +646,44 @@ WalkSpeed_Input.TextWrapped = true
 ClearCheckpoint_Button.Name = "ClearCheckpoint_Button"
 ClearCheckpoint_Button.Parent = Character_Section
 ClearCheckpoint_Button.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-ClearCheckpoint_Button.BackgroundTransparency = 0.300
-ClearCheckpoint_Button.BorderColor3 = Color3.fromRGB(255, 255, 255)
-ClearCheckpoint_Button.BorderSizePixel = 2
+ClearCheckpoint_Button.BackgroundTransparency = 0.5
+ClearCheckpoint_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ClearCheckpoint_Button.BorderSizePixel = 0
 ClearCheckpoint_Button.Position = UDim2.new(0, 210, 0, 225)
-ClearCheckpoint_Button.Size = UDim2.new(0, 150, 0, 40)
+ClearCheckpoint_Button.Size = UDim2.new(0, 150, 0, 50)
 ClearCheckpoint_Button.Font = Enum.Font.GothamBold
 ClearCheckpoint_Button.Text = "Clear checkpoint"
 ClearCheckpoint_Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 ClearCheckpoint_Button.TextScaled = true
 ClearCheckpoint_Button.TextSize = 16
 ClearCheckpoint_Button.TextWrapped = true
-ClearCheckpoint_Button.BackgroundTransparency = 0.2
-ClearCheckpoint_Button.BorderRadius = UDim.new(0, 12) -- Borda arredondada
+ClearCheckpoint_Button.BackgroundTransparency = 0.4
+ClearCheckpoint_Button.BorderRadius = UDim.new(0, 16)
 
--- Adicionando animação de hover
+-- Efeito de Gradiente
+local gradient = Instance.new("UIGradient")
+gradient.Parent = ClearCheckpoint_Button
+gradient.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+}
+gradient.Rotation = 45
+
+-- Animação de Hover
 ClearCheckpoint_Button.MouseEnter:Connect(function()
-    ClearCheckpoint_Button.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+    ClearCheckpoint_Button.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+    gradient.Color = ColorSequence.new{
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 200, 255)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+    }
 end)
 
 ClearCheckpoint_Button.MouseLeave:Connect(function()
     ClearCheckpoint_Button.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+    gradient.Color = ColorSequence.new{
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 255))
+    }
 end)
 JumpPower_Input.Name = "JumpPower_Input"
 JumpPower_Input.Parent = Character_Section
