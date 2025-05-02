@@ -408,18 +408,32 @@ getgenv().GUI_Loaded = true
 wait(0.1)
 TitleBarLabel.Name = "TitleBarLabel"
 TitleBarLabel.Parent = Background
-TitleBarLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TitleBarLabel.BackgroundTransparency = 0.250
+TitleBarLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TitleBarLabel.BackgroundTransparency = 0.2
 TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
-TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
-TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "			diparis & soneca7 dev's"
+TitleBarLabel.Size = UDim2.new(1, 0, 0, 40)
+TitleBarLabel.Font = Enum.Font.GothamBold
+TitleBarLabel.Text = "   diparis & soneca7 dev's"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 TitleBarLabel.TextScaled = true
-TitleBarLabel.TextSize = 14.000
+TitleBarLabel.TextSize = 18
 TitleBarLabel.TextWrapped = true
 TitleBarLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+-- Adicionando efeito de sombra
+local shadow = Instance.new("TextLabel")
+shadow.Name = "Shadow"
+shadow.Parent = TitleBarLabel
+shadow.BackgroundTransparency = 1
+shadow.TextColor3 = Color3.fromRGB(0, 0, 0)
+shadow.Text = TitleBarLabel.Text
+shadow.Font = TitleBarLabel.Font
+shadow.TextSize = TitleBarLabel.TextSize
+shadow.TextScaled = TitleBarLabel.TextScaled
+shadow.TextXAlignment = TitleBarLabel.TextXAlignment
+shadow.Position = UDim2.new(0, 2, 0, 2)  -- Sombra deslocada
+shadow.TextTransparency = 0.5
 
 SectionList.Name = "SectionList"
 SectionList.Parent = Background
@@ -514,7 +528,7 @@ Credits_Section_Button.BorderSizePixel = 0
 Credits_Section_Button.Position = UDim2.new(0, 0, 0, 265)
 Credits_Section_Button.Size = UDim2.new(0, 105, 0, 30)
 Credits_Section_Button.Font = Enum.Font.Oswald
-Credits_Section_Button.Text = "Credits"
+Credits_Section_Button.Text = "Creditos"
 Credits_Section_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
 Credits_Section_Button.TextScaled = true
 Credits_Section_Button.TextSize = 14.000
@@ -1684,7 +1698,7 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 100)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Main: https://discord.gg/RkhpySwNR9\n[System Broken]\nRevamp: https://discord.gg/VJh3kkYzBn\n[Zacks Easy Hub]"
+Credits_Label.Text = "Script criado pelos desenvolvedores:\nRevamp: diparisx86 & soneca7"
 Credits_Label.TextColor3 = Color3.fromRGB(56, 56, 56)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
@@ -3259,9 +3273,9 @@ end)
 
 FreeEmotes_Button.MouseButton1Click:Connect(function()
 	if not FreeEmotesEnabled then
-		game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Free Emotes Loaded",Text = "Press , or use the button on the left side.",Duration = 5;})
+		game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Emote gratis iniciado.",Text = "Pressione ou use o botão no lado esquerdo.",Duration = 5;})
 		task.wait()
-		game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Free Emotes:",Text = "[Of your screen btw.]",Duration = 5;})
+		game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Emote gratis:",Text = "[Da sua tela, a propósito.]",Duration = 5;})
 		FreeEmotesEnabled = true
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/LmaoItsCrazyBro/qweytguqwebuqt/refs/heads/main/marked_esp_system_ai"))()
 	end
@@ -3378,7 +3392,7 @@ Players.PlayerRemoving:Connect(function(player)
 	pcall(function()
 		if player.Name == TargetedPlayer then
 			UpdateTarget(nil)
-			SendNotify("System Broken","Targeted player left/rejoined.",5)
+			SendNotify("Sistema quebrado","Jogador alvo saiu/voltou.",5)
 		end
 	end)
 end)
@@ -3393,7 +3407,7 @@ plr.CharacterAdded:Connect(function(x)
 		ChangeToggleColor(Fly_Button)
 		flying = false
 		Fly_Pad.Visible = false
-		SendNotify("System Broken","Fly was automatically disabled due to your character respawn",5)
+		SendNotify("Sistema quebrado", "Voar foi desativado automaticamente devido ao reaparecimento do seu personagem",5)
 	end
 end)
 
@@ -3408,4 +3422,4 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 	end
 end)
 wait(.3)
-SendNotify("Hello", tostring(game.Players.LocalPlayer.Name))
+SendNotify("Olá!", tostring(game.Players.LocalPlayer.Name))
